@@ -4,44 +4,24 @@ import {
     ChatIcon
 } from '@shopify/polaris-icons';
 import CustomBtnMv from '../components/createruleset/CustomBtnMv';
-import { mvBtnList,orders } from '../order-data.js';
+import { mvBtnList } from '../order-data.js';
 import { json, useLoaderData } from '@remix-run/react';
 import CustomizationAddtoCart from '../components/createruleset/CustomizationAddtoCart.jsx';
 import gridView from '../images/gridView.png'
 import Footer from '../components/footer/Footer.jsx';
 
-// export const loader = ({params})=>{
 
-//     const id = params.rulesetId;
-      
-
-//     const sinOrder = orders.find((order) => order.id === id);
-//     console.log(sinOrder)
-
-//     return json(mvBtnList)
-// }
-
-export const loader = async ({params}) => {
-  const id = params.rulesetId;
-
-  const sinOrder = orders.find((order) => order.id === id);
-
-  return json({mvBtnList,sinOrder})
+export const loader = async () => {
+    return json({ mvBtnList })
 }
 
-function Ruleset() {
-  
-  
-
-  const {mvBtnList,sinOrder} = useLoaderData();
-    //console.log('mvdat',sinOrder)
-
-    const {rTitle} = sinOrder;
+function CreateRuleset() {
 
 
+    const { mvBtnList } = useLoaderData();
 
 
-    const [rulesetName, setRulesetName] = useState(rTitle);
+    const [rulesetName, setRulesetName] = useState('');
     const handleRulesetName = useCallback((value) => setRulesetName(value), []);
 
     const [selected, setSelected] = useState('allproducts');
@@ -149,6 +129,7 @@ function Ruleset() {
         setPriceDisplayTypeSelect(value);
     }, []);
 
+    
 
 
     const [customCssFieldText,setCustomCssFieldText] = useState('');
@@ -158,18 +139,9 @@ function Ruleset() {
     },[]);
 
 
-
-  return (
-    <Page fullWidth>
+    return (
+        <Page fullWidth>
             <Layout>
-              <Layout.Section fullWidth>
-
-                <Box paddingBlock={'400'}>
-                  <Text as='h2' variant='headingXl'>Editing : {rTitle}</Text>
-                </Box>
-
-              </Layout.Section>
-
                 <Layout.Section>
                     <Box paddingBlockEnd={'400'}>
                         <Card>
@@ -855,7 +827,7 @@ function Ruleset() {
                                     <Box paddingBlockEnd={'500'}>
                                         <BlockStack gap={'300'}>
                                             <Text variant='headingMd' as='h4'>Text Before Price</Text>
-                                           
+
 
                                             <InlineStack align='space-between'>
                                                 <Box minWidth='87%'>
@@ -875,14 +847,14 @@ function Ruleset() {
                                     <Box paddingBlockEnd={'500'}>
                                         <BlockStack gap={'300'}>
                                             <Text variant='headingMd' as='h4'>Text Before Quantity Field</Text>
-                                           
+
 
                                             <InlineStack align='space-between'>
                                                 <Box minWidth='87%'>
                                                     <TextField
 
                                                         placeholder='Text before Qty field'
-                                                        
+
                                                         onChange={() => { }}
                                                     />
                                                 </Box>
@@ -895,7 +867,7 @@ function Ruleset() {
                                     <Box paddingBlockEnd={'500'}>
                                         <BlockStack gap={'300'}>
                                             <Text variant='headingMd' as='h4'>Custom Text before variant Title</Text>
-                                           
+
 
                                             <InlineStack align='space-between'>
                                                 <Box minWidth='87%'>
@@ -915,7 +887,7 @@ function Ruleset() {
                                     <Box paddingBlockEnd={'500'}>
                                         <BlockStack gap={'300'}>
                                             <Text variant='headingMd' as='h4'>Add to cart Button Text</Text>
-                                           
+
 
                                             <InlineStack align='space-between'>
                                                 <Box minWidth='87%'>
@@ -935,7 +907,7 @@ function Ruleset() {
                                     <Box paddingBlockEnd={'500'}>
                                         <BlockStack gap={'300'}>
                                             <Text variant='headingMd' as='h4'>Checkout Button Text</Text>
-                                           
+
 
                                             <InlineStack align='space-between'>
                                                 <Box minWidth='87%'>
@@ -1022,7 +994,7 @@ function Ruleset() {
 
                         primaryAction={<Button variant='primary' tone='success'>Save</Button>}
                         secondaryActions={<Button variant='secondary'>Discard</Button>}
-                    
+
                     />
 
                 </Layout.Section>
@@ -1040,25 +1012,27 @@ function Ruleset() {
 
                             <Box paddingBlockStart={'300'}>
                                 <Image
-                                source={gridView}
-                                alt='Grid View'
-                                height={'auto'}
-                                width={'100%'}
+                                    source={gridView}
+                                    alt='Grid View'
+                                    height={'auto'}
+                                    width={'100%'}
                                 />
                             </Box>
-                            
+
                         </Card>
 
                     </Box>
 
 
-                    
+
                 </Layout.Section>
 
                 {/* <Footer></Footer> */}
             </Layout>
         </Page>
-  )
+    )
 }
 
-export default Ruleset
+
+
+export default CreateRuleset

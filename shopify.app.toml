@@ -3,7 +3,7 @@
 client_id = "53ea1c4442865ad34fa59d488615897b"
 name = "Multivariants"
 handle = "multivariants-1"
-application_url = "https://additions-congressional-camping-vegetation.trycloudflare.com"
+application_url = "https://heritage-hung-sparc-reconstruction.trycloudflare.com"
 embedded = true
 
 [build]
@@ -16,9 +16,9 @@ scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://additions-congressional-camping-vegetation.trycloudflare.com/auth/callback",
-  "https://additions-congressional-camping-vegetation.trycloudflare.com/auth/shopify/callback",
-  "https://additions-congressional-camping-vegetation.trycloudflare.com/api/auth/callback"
+  "https://heritage-hung-sparc-reconstruction.trycloudflare.com/auth/callback",
+  "https://heritage-hung-sparc-reconstruction.trycloudflare.com/auth/shopify/callback",
+  "https://heritage-hung-sparc-reconstruction.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

@@ -4,6 +4,7 @@ import { DeleteIcon, MenuHorizontalIcon } from '@shopify/polaris-icons';
 import { useState } from "react";
 import { orders } from "../order-data";
 import Footer from "../components/footer/Footer";
+import TableSingleItemAction from "../components/Table/TableSingleItemActions/TableSingleItemAction";
 
 
 
@@ -188,10 +189,7 @@ export default function Index() {
 
 
         <IndexTable.Cell>
-          <Icon
-            source={MenuHorizontalIcon}
-            tone="base"
-          />
+          <TableSingleItemAction key={id} id={id} ruleSetTone={ruleSetTone}></TableSingleItemAction>
         </IndexTable.Cell>
 
 
@@ -237,7 +235,7 @@ export default function Index() {
         </Layout.Section>
       </Layout>
           
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
 
     </Page>
   );

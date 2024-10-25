@@ -37,9 +37,9 @@ const orders = [
 
     {
       id: '1014',
-      rTitle: 'Ruleset 3',
+      rTitle: 'Ruleset 4',
       ruleSetTone: 'success',
-      appliedFor: 'Product 3',
+      appliedFor: 'Product 4',
       order: '#1018',
       date: 'Jul 20 at 3.44pm',
       customer: 'Leo Carder',
@@ -49,9 +49,9 @@ const orders = [
 
     {
       id: '1015',
-      rTitle: 'Ruleset 3',
+      rTitle: 'Ruleset 5',
       ruleSetTone: 'success',
-      appliedFor: 'Product 3',
+      appliedFor: 'Product 5',
       order: '#1018',
       date: 'Jul 20 at 3.44pm',
       customer: 'Leo Carder',
@@ -61,9 +61,9 @@ const orders = [
 
     {
       id: '1016',
-      rTitle: 'Ruleset 3',
+      rTitle: 'Ruleset 6',
       ruleSetTone: 'success',
-      appliedFor: 'Product 3',
+      appliedFor: 'Product 6',
       order: '#1018',
       date: 'Jul 20 at 3.44pm',
       customer: 'Leo Carder',
@@ -72,6 +72,28 @@ const orders = [
     },
   ];
 
+
+
+  const mvBtnList = [
+      {
+        label:'Add to cart',
+        id:891,
+      },
+      {
+        label:'Check out',
+        id:892,
+      },
+      {
+        label:'Variant Image',
+        id:893,
+      },
+      {
+        label:'More Options',
+        id:894,
+      },
+  ];
+
   export {
-    orders
+    orders,
+    mvBtnList
   }

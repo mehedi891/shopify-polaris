@@ -3,3 +3,26 @@
     max-width: 250px;
     padding: var(--p-space-500) !important;
 }
+
+.btn-group-mv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-group-mv button{
+    border: none;
+    background-color: #ccc;
+    color: #323232;
+    padding: 15px 25px;
+    border-radius: 15px;
+    min-height: 30px;
+    min-width: 70px;
+    cursor: pointer;
+    width: 90%;
+}
+.btn-group-mv button:hover,
+.btn-group-mv button.active{
+    background-color: #323232;
+    color: #fff;
+}
