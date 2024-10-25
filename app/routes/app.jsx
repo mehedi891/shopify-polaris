@@ -1,5 +1,5 @@
 import { json } from "@remix-run/node";
-import { Link, Outlet, useLoaderData, useRouteError } from "@remix-run/react";
+import { Link, Outlet, useLoaderData, useLocation, useRouteError } from "@remix-run/react";
 import { boundary } from "@shopify/shopify-app-remix/server";
 import { AppProvider } from "@shopify/shopify-app-remix/react";
 import { NavMenu, TitleBar } from "@shopify/app-bridge-react";
@@ -7,6 +7,8 @@ import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 import { authenticate } from "../shopify.server";
 import appCss from "../css/app.css?url";
 import Footer from "../components/footer/Footer";
+import Header from "../components/Header/Header";
+import { Button } from "@shopify/polaris";
 
 
 
@@ -21,6 +23,8 @@ export const loader = async ({ request }) => {
 export default function App() {
   const { apiKey } = useLoaderData();
 
+  
+
   return (
     <AppProvider isEmbeddedApp apiKey={apiKey}>
       <NavMenu>
@@ -33,13 +37,7 @@ export default function App() {
       </NavMenu>
 
 
-      {/* <TitleBar title="Products">
-      <button variant="primary">Primary action</button>
-      <button>Secondary action</button>
-      <button>Secondary action</button>
-      <button>Secondary action</button>
-      <button>Secondary action</button>
-    </TitleBar> */}
+      <Header/>
 
       <Outlet />
 
